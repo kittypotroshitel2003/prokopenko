@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кейсы — Анастасия Прокопенко</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face { font-family:'New Standard'; src:url('assets/NewStandard-Regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:'SF Pro Display'; src:url('assets/SF-Pro-Display-Light.otf') format('opentype'); font-weight:300; font-style:normal; font-display:swap; }
+    @font-face { font-family:'SF Pro Display'; src:url('assets/SF-Pro-Display-Regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background:#201f1d;color:#e5e0cc;font-family:'SF Pro Display',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    .btn-gold{background:linear-gradient(-76.22deg,#c6ac89 3.42%,#a88659 178.48%);border-radius:100px;display:inline-flex;align-items:center;justify-content:center;color:#201f1d;font-family:'SF Pro Display',sans-serif;font-weight:400;font-size:18px;cursor:pointer;text-decoration:none;transition:opacity .2s,transform .2s;white-space:nowrap;}
+    .btn-gold:hover{opacity:.88;transform:translateY(-1px);}
+    .nav-link{color:#e5e0cc;text-decoration:none;font-size:18px;font-weight:300;white-space:nowrap;transition:opacity .2s;position:relative;}
+    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#e5e0cc;transition:width .3s ease;}
+    .nav-link:hover::after{width:100%;}
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease;}
+    .reveal.visible{opacity:1;transform:none;}
+    .reveal-d1{transition-delay:.15s;}
+    .reveal-d2{transition-delay:.3s;}
+    .reveal-d3{transition-delay:.45s;}
+    .case-card-full{display:flex;flex-direction:column;background:#1e1c1a;border:1px solid rgba(198,172,137,.35);border-radius:12px;overflow:hidden;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease;}
+    .case-card-full:hover{transform:translateY(-4px);box-shadow:0 24px 64px rgba(0,0,0,.5);}
+    .tag{display:inline-block;border:1px solid rgba(198,172,137,.55);border-radius:100px;padding:4px 14px;font-size:13px;font-weight:300;color:#c6ac89;letter-spacing:.03em;}
+    @keyframes drawLine{from{width:0}to{width:100%}}
+    .divider-line{height:1px;background:#c6ac89;width:0;animation:drawLine 1.4s cubic-bezier(.22,1,.36,1) .4s forwards;}
+
+    /* ── MOBILE MENU ── */
+    #mob-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;margin-left:auto;}
+    #mob-btn span{display:block;width:22px;height:1.5px;background:#e5e0cc;transition:transform .3s,opacity .3s;}
+    #mob-btn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    #mob-btn.open span:nth-child(2){opacity:0;}
+    #mob-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    #mob-overlay{display:none;position:fixed;inset:0;background:#e7e3dd;z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
+    #mob-overlay.open{display:flex;}
+    #mob-overlay a{font-family:'New Standard',serif;font-size:32px;color:#201f1d;text-decoration:none;transition:opacity .2s;}
+    #mob-overlay a:hover{opacity:.5;}
+    #mob-x{position:absolute;top:24px;right:24px;background:none;border:none;cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;}
+    #mob-x::before,#mob-x::after{content:'';position:absolute;width:22px;height:1.5px;background:#201f1d;}
+    #mob-x::before{transform:rotate(45deg);}
+    #mob-x::after{transform:rotate(-45deg);}
+
+    /* ── MOBILE ── */
+    @media(max-width:768px){
+      /* Nav */
+      #site-header{padding:0 20px!important;background:rgba(32,31,29,.97)!important;}
+      #site-header nav{display:none!important;}
+      #h-socials{display:none!important;}
+      #mob-btn{display:flex!important;}
+
+      /* Hero */
+      #ch{padding:100px 24px 48px!important;}
+      #ch h1{font-size:44px!important;letter-spacing:-1px!important;line-height:1.05!important;}
+      #ch p{font-size:16px!important;max-width:100%!important;line-height:1.55!important;}
+
+      /* Divider */
+      #cases-divider{padding:0 24px!important;}
+
+      /* Cards grid */
+      #cg{padding:40px 24px 72px!important;}
+      #cg>div{grid-template-columns:1fr!important;gap:16px!important;}
+      .case-card-full>div:first-child{height:220px!important;}
+
+      /* CTA */
+      #cta{padding:60px 24px!important;}
+      #cta>div{flex-direction:column!important;gap:28px!important;align-items:flex-start!important;}
+      #cta h2{font-size:32px!important;letter-spacing:-.5px!important;line-height:1.1!important;}
+      #cta .btn-gold{width:100%!important;padding:16px!important;font-size:16px!important;}
+
+      /* Footer */
+      footer{height:auto!important;}
+      footer>img{display:none!important;}
+      footer>div{padding:48px 24px 36px!important;background:#e7e3dd;}
+      footer h3{font-size:26px!important;letter-spacing:-.5px!important;line-height:1.2!important;}
+      footer>div>div:first-child>div{flex-direction:column!important;gap:16px!important;align-items:flex-start!important;}
+      footer nav{flex-wrap:wrap!important;gap:8px 16px!important;font-size:16px!important;}
+      footer>div>div:last-child{flex-direction:column!important;gap:8px!important;align-items:flex-start!important;}
+      footer>div>div:last-child p{font-size:13px!important;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE OVERLAY -->
+<div id="mob-overlay">
+  <button id="mob-x" onclick="closeMob()"></button>
+  <a href="index.html#about" onclick="closeMob()">обо мне</a>
+  <a href="index.html#services" onclick="closeMob()">услуги</a>
+  <a href="cases.html" onclick="closeMob()">кейсы</a>
+  <a href="index.html#price" onclick="closeMob()">стоимость</a>
+  <a href="index.html#testimonials" onclick="closeMob()">отзывы</a>
+</div>
+
+<!-- NAV -->
+<header id="site-header" style="position:fixed;top:0;left:0;width:100%;z-index:50;padding:0 130px;background:rgba(32,31,29,.85);backdrop-filter:blur(12px);">
+  <div style="position:relative;display:flex;align-items:center;height:60px;">
+    <a href="index.html" style="font-family:'New Standard',serif;font-size:24px;letter-spacing:-.48px;color:#e5e0cc;text-decoration:none;white-space:nowrap;transition:opacity .2s;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">Анастасия Прокопенко</a>
+    <nav style="position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:16px;align-items:center;">
+      <a href="index.html#about"        class="nav-link">обо мне</a>
+      <a href="index.html#services"     class="nav-link">услуги</a>
+      <a href="cases.html"              class="nav-link" style="opacity:1;">кейсы</a>
+      <a href="index.html#price"        class="nav-link">стоимость</a>
+      <a href="index.html#testimonials" class="nav-link">отзывы</a>
+    </nav>
+    <div id="h-socials" style="margin-left:auto;display:flex;gap:12px;align-items:center;">
+      <a href="#" style="opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.75'"><img src="assets/max.svg" width="16" height="16" alt="Max"></a>
+      <a href="#" style="opacity:.75;transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.75'"><img src="assets/vk.svg" width="24" height="24" alt="VK"></a>
+    </div>
+    <button id="mob-btn" aria-label="Меню" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  </div>
+  <div style="height:1px;background:#e5e0cc;opacity:.2;"></div>
+</header>
+
+<!-- HERO -->
+<section id="ch" style="background:#201f1d;padding:160px 130px 80px;">
+  <div style="max-width:1180px;margin:0 auto;">
+    <h1 style="font-family:'New Standard',serif;font-size:88px;line-height:.95;letter-spacing:-2px;color:#e5e0cc;font-weight:400;margin-bottom:32px;" class="reveal">Кейсы</h1>
+    <p style="font-size:20px;font-weight:300;color:#e5e0cc;opacity:.65;max-width:560px;line-height:1.6;" class="reveal reveal-d2">Реальные истории клиентов — от первого звонка до финального решения. Каждый кейс показывает, как работает системный юридический подход.</p>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div id="cases-divider" style="background:#201f1d;padding:0 130px;">
+  <div style="max-width:1180px;margin:0 auto;overflow:hidden;"><div class="divider-line"></div></div>
+</div>
+
+<!-- CASES GRID -->
+<section id="cg" style="background:#201f1d;padding:64px 130px 120px;">
+  <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+    <!-- Card 1 -->
+    <a href="case-1.html" class="case-card-full reveal">
+      <div style="height:280px;overflow:hidden;flex-shrink:0;">
+        <img src="assets/case-1.jpg" alt="Взыскание долга" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='https://placehold.co/380x280/2a2520/c6ac89?text=Кейс+1'">
+      </div>
+      <div style="padding:28px 28px 0;display:flex;flex-direction:column;gap:12px;">
+        <p style="font-family:'SF Pro Display',sans-serif;font-size:22px;font-weight:400;color:#e5e0cc;line-height:1.3;">Взыскание долга по договору поставки</p>
+        <p style="font-size:16px;font-weight:300;color:#e5e0cc;opacity:.6;line-height:1.55;">Контрагент отказался платить по договору, ссылаясь на нарушение сроков. После претензии и суда взыскано 2,5 млн рублей.</p>
+      </div>
+      <div style="padding:20px 28px 28px;margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;">
+        <div>
+          <p style="font-size:13px;font-weight:300;color:#c6ac89;margin-bottom:4px;">Результат</p>
+          <p style="font-size:17px;font-weight:400;color:#e5e0cc;">Взыскано 2 500 000 ₽</p>
+        </div>
+        <p style="font-size:15px;font-weight:300;color:#e5e0cc;opacity:.5;">3 мес.</p>
+      </div>
+    </a>
+
+    <!-- Card 2 -->
+    <a href="case-2.html" class="case-card-full reveal reveal-d1">
+      <div style="height:280px;overflow:hidden;flex-shrink:0;">
+        <img src="assets/case-2.jpg" alt="Раздел имущества" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='https://placehold.co/380x280/2a2520/c6ac89?text=Кейс+2'">
+      </div>
+      <div style="padding:28px 28px 0;display:flex;flex-direction:column;gap:12px;">
+        <p style="font-family:'SF Pro Display',sans-serif;font-size:22px;font-weight:400;color:#e5e0cc;line-height:1.3;">Раздел имущества с сохранением интересов клиента</p>
+        <p style="font-size:16px;font-weight:300;color:#e5e0cc;opacity:.6;line-height:1.55;">Сложный бракоразводный процесс с оспариванием совместно нажитого имущества. Достигнуто мирное соглашение с выделением доли.</p>
+      </div>
+      <div style="padding:20px 28px 28px;margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;">
+        <div>
+          <p style="font-size:13px;font-weight:300;color:#c6ac89;margin-bottom:4px;">Результат</p>
+          <p style="font-size:17px;font-weight:400;color:#e5e0cc;">Доля выделена, мировое</p>
+        </div>
+        <p style="font-size:15px;font-weight:300;color:#e5e0cc;opacity:.5;">5 мес.</p>
+      </div>
+    </a>
+
+    <!-- Card 3 -->
+    <a href="case-3.html" class="case-card-full reveal reveal-d2">
+      <div style="height:280px;overflow:hidden;flex-shrink:0;">
+        <img src="assets/case-3.jpg" alt="Сопровождение сделки" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" onerror="this.src='https://placehold.co/380x280/2a2520/c6ac89?text=Кейс+3'">
+      </div>
+      <div style="padding:28px 28px 0;display:flex;flex-direction:column;gap:12px;">
+        <p style="font-family:'SF Pro Display',sans-serif;font-size:22px;font-weight:400;color:#e5e0cc;line-height:1.3;">Сопровождение сделки купли-продажи бизнеса</p>
+        <p style="font-size:16px;font-weight:300;color:#e5e0cc;opacity:.6;line-height:1.55;">Клиент приобретал действующий бизнес. Полная юридическая проверка, структурирование сделки и защита от скрытых рисков.</p>
+      </div>
+      <div style="padding:20px 28px 28px;margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;">
+        <div>
+          <p style="font-size:13px;font-weight:300;color:#c6ac89;margin-bottom:4px;">Результат</p>
+          <p style="font-size:17px;font-weight:400;color:#e5e0cc;">Сделка закрыта без рисков</p>
+        </div>
+        <p style="font-size:15px;font-weight:300;color:#e5e0cc;opacity:.5;">2 мес.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="background:#e7e3dd;padding:100px 130px;">
+  <div style="max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <h2 style="font-family:'New Standard',serif;font-size:48px;color:#201f1d;font-weight:400;letter-spacing:-.96px;line-height:1.05;margin-bottom:16px;" class="reveal">Узнайте, чем<br>могу помочь вам</h2>
+      <p style="font-size:18px;font-weight:300;color:#201f1d;opacity:.7;line-height:1.6;" class="reveal reveal-d1">Каждая ситуация индивидуальна. Расскажите о своей — разберём вместе.</p>
+    </div>
+    <a href="index.html#contact" class="btn-gold reveal reveal-d2" style="padding:20px 40px;font-size:18px;flex-shrink:0;">Обсудить ситуацию</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="position:relative;height:452px;overflow:hidden;">
+  <img src="assets/footer.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none;">
+  <div style="position:relative;z-index:10;height:100%;padding:100px 130px 48px;display:flex;flex-direction:column;justify-content:space-between;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h3 style="font-family:'New Standard',serif;font-size:48px;color:#201f1d;letter-spacing:-.96px;line-height:50px;">Анастасия Прокопенко</h3>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <nav style="display:flex;gap:16px;align-items:center;font-size:18px;font-weight:300;">
+          <a href="index.html#about"        style="color:#201f1d;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">обо мне</a>
+          <a href="index.html#services"     style="color:#201f1d;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">услуги</a>
+          <a href="cases.html"              style="color:#201f1d;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">кейсы</a>
+          <a href="index.html#price"        style="color:#201f1d;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">стоимость</a>
+          <a href="index.html#testimonials" style="color:#201f1d;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">отзывы</a>
+        </nav>
+        <div style="display:flex;gap:16px;align-items:center;">
+          <a href="#" style="opacity:.65;transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'"><img src="assets/max.svg" width="16" height="16" alt="Max" style="filter:brightness(0);"></a>
+          <a href="#" style="opacity:.65;transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.65'"><img src="assets/vk.svg" width="24" height="24" alt="VK" style="filter:brightness(0);"></a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;width:100%;">
+      <p style="font-size:18px;font-weight:300;color:#201f1d;cursor:pointer;transition:opacity .2s;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Политика обработки персональных данных</p>
+      <p style="font-size:18px;font-weight:300;color:#201f1d;cursor:pointer;transition:opacity .2s;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">Публичная оферта</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => { if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);} });
+  }, {threshold:0.1});
+  revealEls.forEach(el => obs.observe(el));
+
+  function toggleMob(){
+    document.getElementById('mob-btn').classList.toggle('open');
+    document.getElementById('mob-overlay').classList.toggle('open');
+    document.body.style.overflow=document.getElementById('mob-overlay').classList.contains('open')?'hidden':'';
+  }
+  function closeMob(){
+    document.getElementById('mob-btn').classList.remove('open');
+    document.getElementById('mob-overlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+</script>
+</body>
+</html>

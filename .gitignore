@@ -1,0 +1,8 @@
+temporary screenshots/
+_env
+node_modules/
+*.mjs
+deploy.js
+serve.mjs
+CLAUDE.md
+сайт юристке.code-workspace
