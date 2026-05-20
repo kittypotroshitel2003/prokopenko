@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Анастасия Прокопенко — Юридическая помощь в Краснодаре</title>
 
-  <script>if(location.hash)history.replaceState(null,'',location.pathname)</script>
+  <script>
+    var _initHash = location.hash;
+    if(_initHash) history.replaceState(null,'',location.pathname);
+    window.addEventListener('load',function(){
+      if(_initHash){
+        var el=document.querySelector(_initHash);
+        if(el){setTimeout(function(){
+          var top=el.getBoundingClientRect().top+window.pageYOffset-60;
+          window.scrollTo({top:top<0?0:top,behavior:'smooth'});
+        },80);}
+      }
+    });
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -65,8 +77,10 @@
     .nav-link {
       color: #e5e0cc;
       text-decoration: none;
+      font-family: 'SF Pro Display', sans-serif;
       font-size: 20px;
       font-weight: 300;
+      letter-spacing: 0;
       white-space: nowrap;
       transition: opacity 0.2s;
       position: relative;
@@ -538,7 +552,7 @@
   <button id="mob-close" aria-label="Закрыть" onclick="closeMobMenu()"></button>
   <a href="#about"        onclick="closeMobMenu()">обо мне</a>
   <a href="#services"     onclick="closeMobMenu()">услуги</a>
-  <a href="#cases"        onclick="closeMobMenu()">кейсы</a>
+  <a href="cases.html"   onclick="closeMobMenu()">кейсы</a>
   <a href="#price"        onclick="closeMobMenu()">стоимость</a>
   <a href="#testimonials" onclick="closeMobMenu()">отзывы</a>
 </div>
@@ -547,7 +561,7 @@
 <!-- ════════════════════════════════
      NAV
 ════════════════════════════════ -->
-<header id="site-header" style="position:absolute; top:10px; left:0; width:100%; z-index:50; padding:0 130px;">
+<header id="site-header" style="position:fixed; top:0; left:0; width:100%; z-index:50; padding:0 130px; background:#201f1d; transform:translateY(0); transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);">
   <div style="position:relative; display:flex; align-items:center; height:50px;">
 
     <!-- Logo (left) -->
@@ -559,7 +573,7 @@
     <nav id="site-nav" style="position:absolute; left:50%; transform:translateX(-50%); display:flex; gap:28px; align-items:center;">
       <a href="#about"        class="nav-link">обо мне</a>
       <a href="#services"     class="nav-link">услуги</a>
-      <a href="#cases"        class="nav-link">кейсы</a>
+      <a href="cases.html"    class="nav-link">кейсы</a>
       <a href="#price"        class="nav-link">стоимость</a>
       <a href="#testimonials" class="nav-link">отзывы</a>
     </nav>
@@ -1100,7 +1114,7 @@
     </div>
 
     <!-- Right: photo -->
-    <div id="faq-photo" style="width:500px; flex-shrink:0; position:sticky; top:0; align-self:flex-start; display:flex; align-items:flex-start; justify-content:flex-end;">
+    <div id="faq-photo" style="width:500px; flex-shrink:0; position:sticky; top:0; align-self:flex-start; display:flex; align-items:flex-start; justify-content:flex-end; margin-right:-130px;">
       <img src="assets/column-photo.png" alt="" style="width:500px; height:740px; object-fit:cover; object-position:top; display:block;">
     </div>
   </div>
@@ -1112,7 +1126,7 @@
 ════════════════════════════════ -->
 <section id="contact" style="position:relative; z-index:1; overflow:hidden; background:url('assets/form.png') center/cover no-repeat; background-color:#201f1d;">
 
-  <div id="form-inner" style="position:relative; z-index:2; display:flex; gap:80px; align-items:flex-start; padding:80px 130px; min-height:554px;">
+  <div id="form-inner" style="position:relative; z-index:2; display:flex; gap:80px; align-items:flex-start; padding:80px 130px 170px; min-height:554px;">
 
     <!-- Left: headline -->
     <div id="form-left" style="width:540px; flex-shrink:0; display:flex; flex-direction:column; gap:32px; padding-top:24px;">
@@ -1159,7 +1173,7 @@
 <!-- ════════════════════════════════
      FOOTER
 ════════════════════════════════ -->
-<footer id="site-footer" style="position:relative; z-index:0; height:452px; overflow:hidden; margin-top:-80px;">
+<footer id="site-footer" style="position:relative; z-index:2; height:452px; overflow:hidden; margin-top:-60px;">
   <!-- Paper bg -->
   <img src="assets/footer.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:fill; pointer-events:none;">
 
@@ -1177,7 +1191,7 @@
         <nav id="footer-nav" style="display:flex; gap:16px; align-items:center; font-size:18px; font-weight:300;">
           <a href="#about"        style="color:#201f1d; text-decoration:none; transition:opacity .2s; white-space:nowrap;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">обо мне</a>
           <a href="#services"     style="color:#201f1d; text-decoration:none; transition:opacity .2s; white-space:nowrap;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">услуги</a>
-          <a href="#cases"        style="color:#201f1d; text-decoration:none; transition:opacity .2s; white-space:nowrap;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">кейсы</a>
+          <a href="cases.html"    style="color:#201f1d; text-decoration:none; transition:opacity .2s; white-space:nowrap;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">кейсы</a>
           <a href="#price"        style="color:#201f1d; text-decoration:none; transition:opacity .2s; white-space:nowrap;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">стоимость</a>
           <a href="#testimonials" style="color:#201f1d; text-decoration:none; transition:opacity .2s; white-space:nowrap;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">отзывы</a>
         </nav>
@@ -1202,6 +1216,7 @@
       </p>
       <p id="footer-credit" style="display:flex; align-items:center; gap:8px; font-size:16px; font-weight:300; color:#201f1d; white-space:nowrap; letter-spacing:0.01em;">
         разработано
+        <a href="https://podpisait.ru" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;line-height:0;">
         <svg width="130" height="14" viewBox="0 0 173 19" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M22.4608 16.2286C22.4602 16.5164 22.4504 16.8041 22.432 17.0912C22.3761 17.9655 21.5678 18.8507 20.7066 18.9556C20.3284 19.001 19.9433 19.0016 19.5617 18.9993C18.9852 18.9964 18.4047 19.0121 17.8334 18.9503C16.8655 18.8455 16.0642 17.8886 16.0642 16.9031C16.0636 14.0457 16.0642 11.1883 16.0642 8.33087C16.0642 7.33666 15.3638 6.62609 14.3803 6.62551C13.3306 6.62551 12.2814 6.62551 11.2322 6.62551C10.183 6.62551 9.1338 6.62551 8.08403 6.62551C7.10056 6.62609 6.40014 7.33666 6.40014 8.33087C6.40014 11.1883 6.40072 14.0457 6.40014 16.9031C6.40014 17.8886 5.59884 18.8455 4.63093 18.9503C4.05964 19.0121 3.47913 18.9964 2.90265 18.9993C2.52103 19.0016 2.13594 19.001 1.75777 18.9556C0.896513 18.8507 0.088292 17.9655 0.0323737 17.0912C0.0139264 16.8041 0.00412634 16.5164 0.00354986 16.2286C0.00124395 13.7189 -0.00394435 11.2098 0.00527929 8.70013C0.00931463 7.64185 0.727029 6.78451 1.75835 6.6657C2.28352 6.60512 2.81907 6.62667 3.35058 6.6226C4.24758 6.61619 4.92609 6.01512 5.03389 5.11468C5.0558 4.93354 5.06675 4.75066 5.06733 4.56894C5.07021 3.29458 5.08174 3.35981 5.06963 2.08545C5.05926 1.06503 5.87555 0.150033 6.84576 0.037624C6.98642 0.0207334 7.12766 0.00209563 7.26889 0.0015132C8.5896 -0.000234093 9.91089 -0.000234093 11.2322 0.000348338C12.5535 0.000348338 13.8747 0.000348339 15.1955 0.0015132C15.3367 0.00209563 15.4779 0.0207334 15.6186 0.037624C16.5888 0.150033 17.4051 1.06503 17.3947 2.08545C17.3826 3.35981 17.3941 3.29458 17.397 4.56894C17.397 4.75066 17.4086 4.93354 17.4305 5.11468C17.5383 6.01512 18.2168 6.61619 19.1138 6.6226C19.6453 6.62667 20.1808 6.60512 20.706 6.6657C21.7373 6.78451 22.455 7.64185 22.4591 8.70013C22.4683 11.2098 22.4631 13.7189 22.4608 16.2286Z" fill="#c6ac89"/>
           <path d="M159.754 7.48301V4.42719H173L159.754 7.48301ZM173 4.42719V7.49829H168.271V15.7337H164.543V7.49829H159.754V4.42719H173Z" fill="#c6ac89"/>
@@ -1214,6 +1229,7 @@
           <path d="M54.9468 4.18258C56.3311 4.18258 57.5789 4.44233 58.6903 4.96182C59.8119 5.47112 60.6858 6.17905 61.3123 7.08561C61.9488 7.98198 62.2671 8.9955 62.2671 10.1261C62.2671 11.2466 61.9488 12.255 61.3123 13.1514C60.6858 14.0478 59.8169 14.7557 58.7055 15.2752C57.594 15.7845 56.3462 16.0392 54.962 16.0392C53.6283 16.0392 52.3956 15.7845 51.2639 15.2752C50.1323 14.7557 49.233 14.0478 48.5662 13.1514C47.9094 12.2448 47.5811 11.2364 47.5811 10.1261C47.5811 9.00568 47.9094 7.99217 48.5662 7.08561C49.233 6.17905 50.1272 5.47112 51.2488 4.96182C52.3804 4.44233 53.6131 4.18258 54.9468 4.18258ZM54.962 13.182C55.5278 13.182 56.0683 13.0597 56.5836 12.8153C57.1091 12.5708 57.5334 12.2194 57.8567 11.761C58.1801 11.3026 58.3417 10.7577 58.3417 10.1261C58.3417 9.49461 58.175 8.94966 57.8416 8.49129C57.5183 8.02273 57.0939 7.67131 56.5685 7.43703C56.0431 7.19256 55.4975 7.07033 54.9317 7.07033C54.3557 7.07033 53.8101 7.19256 53.2948 7.43703C52.7795 7.68149 52.3602 8.03801 52.0369 8.50657C51.7237 8.96494 51.567 9.5048 51.567 10.1261C51.567 10.7577 51.7287 11.3026 52.052 11.761C52.3754 12.2194 52.7947 12.5708 53.31 12.8153C53.8354 13.0597 54.386 13.182 54.962 13.182Z" fill="#c6ac89"/>
           <path d="M45.5919 4.42719V15.7337H41.8333V7.10103H35.589V15.7337H31.8304V4.42719H45.5919Z" fill="#c6ac89"/>
         </svg>
+        </a>
       </p>
     </div>
   </div>
@@ -1356,6 +1372,24 @@
       });
     });
   }
+
+  /* ── SMART SCROLL NAVBAR ── */
+  (function(){
+    var hdr = document.getElementById('site-header');
+    var prevY = 0;
+
+    function updateNav() {
+      var y = window.scrollY;
+      if (y > prevY && y > 80) {
+        hdr.style.transform = 'translateY(-100%)';
+      } else {
+        hdr.style.transform = 'translateY(0)';
+      }
+      prevY = y;
+    }
+
+    window.addEventListener('scroll', updateNav, {passive: true});
+  })();
 </script>
 
 </body>
