@@ -44,6 +44,22 @@
     #mob-x::before{transform:rotate(45deg);}
     #mob-x::after{transform:rotate(-45deg);}
 
+    /* ── TABLET (769px–1220px) ── */
+    @media(min-width:769px) and (max-width:1220px){
+      #site-header{padding:0 40px!important;}
+      #site-header nav{display:none!important;}
+      #h-socials{display:none!important;}
+      #mob-btn{display:flex!important;margin-left:auto;}
+      #ch{padding:120px 40px 60px!important;}
+      #ch h1{font-size:64px!important;letter-spacing:-1.5px!important;}
+      #ch p{font-size:17px!important;max-width:520px!important;}
+      #cases-divider{padding:0 40px!important;}
+      #cg{padding:40px 40px 72px!important;}
+      #cg>div{grid-template-columns:1fr 1fr!important;gap:20px!important;}
+      #cta{padding:80px 40px!important;}
+      footer>div{padding:80px 40px 44px!important;}
+    }
+
     /* ── MOBILE ── */
     @media(max-width:768px){
       /* Nav */
@@ -206,7 +222,9 @@
   <img src="assets/footer.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none;">
   <div style="position:relative;z-index:10;height:100%;padding:100px 130px 48px;display:flex;flex-direction:column;justify-content:space-between;">
     <div style="display:flex;flex-direction:column;gap:16px;">
-      <h3 style="font-family:'New Standard',serif;font-size:48px;color:#201f1d;letter-spacing:-.96px;line-height:50px;">Анастасия Прокопенко</h3>
+      <a href="index.html" style="text-decoration:none;display:inline-block;transition:opacity .2s;" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">
+        <h3 style="font-family:'New Standard',serif;font-size:48px;color:#201f1d;letter-spacing:-.96px;line-height:50px;">Анастасия Прокопенко</h3>
+      </a>
       <div style="display:flex;align-items:center;justify-content:space-between;">
         <nav style="display:flex;gap:16px;align-items:center;font-size:18px;font-weight:300;">
           <a href="index.html#about"        style="color:#201f1d;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.5'" onmouseout="this.style.opacity='1'">обо мне</a>

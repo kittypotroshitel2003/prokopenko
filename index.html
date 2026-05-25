@@ -365,6 +365,209 @@
     #footer-socials a { opacity: 1 !important; }
 
     /* ══════════════════════
+       TABLET (769px – 1220px)
+    ══════════════════════ */
+    @media (min-width: 769px) and (max-width: 1220px) {
+      html { overflow-x: hidden; }
+
+      /* ── NAV: гамбургер вместо ссылок ── */
+      #site-nav, #site-socials { display: none !important; }
+      #mob-menu-btn { display: flex !important; }
+      #site-header { padding: 0 40px !important; }
+
+      /* ── HERO ── */
+      #hero { height: 100svh !important; min-height: 600px !important; }
+      #hero-bg-img {
+        object-position: 70% top !important;
+      }
+      #hero-gradient {
+        background:
+          linear-gradient(135.83deg, rgba(0,0,0,0.30) 20%, rgba(102,102,102,0) 65%),
+          linear-gradient(to top, #201f1d 5%, transparent 22%) !important;
+      }
+      #hero-text {
+        top: 140px !important;
+        left: 40px !important;
+        width: 580px !important;
+        gap: 18px !important;
+      }
+      #hero-h1 { font-size: 52px !important; line-height: 54px !important; letter-spacing: -1px !important; }
+      #hero-sub { font-size: 18px !important; width: 100% !important; }
+      #hero-cta-wrap { top: 430px !important; left: 40px !important; }
+      #hero-cta-btn { padding: 22px 36px !important; font-size: 17px !important; }
+      #hero-messenger-row { top: 530px !important; left: 40px !important; bottom: auto !important; }
+      #hero-messenger-row > p { font-size: 15px !important; }
+
+      /* ── ABOUT ── */
+      #about-inner {
+        gap: 0 !important;
+        padding: 56px 40px 80px !important;
+        min-height: auto !important;
+        align-items: flex-start !important;
+      }
+      #about-photo { display: none !important; }
+      #about-right { width: 100% !important; flex: 1 !important; }
+      #about-right > div:first-child { gap: 40px !important; padding-bottom: 32px !important; }
+      #about-h2 { font-size: 40px !important; line-height: 1.1 !important; }
+      #about-body p { font-size: 16px !important; line-height: 1.65 !important; }
+      #stats-row { gap: 0 !important; justify-content: center !important; max-width: 100% !important; }
+      #stats-row > div:not(.stats-divider) { flex: 1 !important; align-items: center !important; text-align: center !important; }
+      #stats-row > div:not(.stats-divider) p:first-child { font-size: 32px !important; }
+      #stats-row > div:not(.stats-divider) p:last-child { font-size: 13px !important; text-align: center !important; width: auto !important; }
+      .stats-divider { display: block !important; width: 1px !important; height: 40px !important; align-self: center !important; flex-shrink: 0 !important; }
+      #about-more-link { display: none !important; }
+      #about-inner { padding-bottom: 56px !important; }
+
+      /* ── PROCESS ── */
+      #process { overflow: visible !important; }
+      #process-inner { padding: 64px 40px 72px !important; }
+      #process-title { font-size: 40px !important; margin-bottom: 56px !important; text-align: center !important; }
+      #process-steps-row {
+        max-width: 100% !important;
+        gap: 0 !important;
+        justify-content: space-between !important;
+        overflow: visible !important;
+        align-items: flex-start !important;
+      }
+      .process-line-fill { left: 6% !important; right: 6% !important; top: 30px !important; }
+      .step-col {
+        min-width: 0 !important;
+        max-width: none !important;
+        flex: 1 !important;
+        padding: 0 8px !important;
+        align-items: center !important;
+      }
+      .step-col > div:last-child { text-align: center !important; padding-top: 14px !important; }
+      .step-col > div:last-child p:first-child { font-size: 15px !important; text-align: center !important; }
+      .step-col > div:last-child p:last-child { font-size: 13px !important; text-align: center !important; line-height: 1.5 !important; }
+
+      /* ── SERVICES — 2 колонки ── */
+      #services { padding: 56px 0 !important; }
+      #services-inner { width: auto !important; padding: 0 40px !important; }
+      #services-title { font-size: 40px !important; line-height: 1.1 !important; width: 100% !important; margin-bottom: 32px !important; }
+      #services-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-auto-rows: auto !important;
+        gap: 16px !important;
+      }
+      .service-card {
+        width: auto !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 160px !important;
+        padding: 24px !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+      }
+      .service-card img { width: 32px !important; height: 32px !important; }
+      .service-card p:first-of-type { font-size: 18px !important; }
+      .service-card p:last-of-type { font-size: 14px !important; }
+      #cta-service-card {
+        width: auto !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 160px !important;
+        padding: 24px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 12px !important;
+      }
+      #cta-service-card p:first-child { font-size: 18px !important; width: auto !important; }
+      #cta-service-card p:last-of-type { font-size: 14px !important; }
+      #service-arrow-btn { display: none !important; }
+
+      /* ── CASES ── */
+      #cases { padding: 48px 0 60px !important; }
+      #cases-inner { max-width: 100% !important; padding: 0 40px !important; }
+      #cases-title { font-size: 40px !important; margin-bottom: 28px !important; }
+      #cases-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        gap: 16px !important;
+        margin: 0 -40px !important;
+        padding: 0 40px 12px !important;
+        scrollbar-width: none !important;
+      }
+      #cases-grid::-webkit-scrollbar { display: none !important; }
+      .case-card {
+        min-width: 300px !important;
+        width: 300px !important;
+        height: auto !important;
+        scroll-snap-align: start !important;
+      }
+      .case-card p[style*="font-size:24px"] { font-size: 18px !important; }
+      .case-card p[style*="font-size:18px"] { font-size: 14px !important; }
+      #cases-btn-wrap { margin-top: 32px !important; }
+
+      /* ── PRICE ── */
+      #price-inner { padding: 56px 40px 60px !important; gap: 48px !important; }
+      #price-title { font-size: 40px !important; }
+      .price-name { font-size: 17px !important; }
+      .price-amount { font-size: 20px !important; }
+
+      /* ── TESTIMONIALS ── */
+      #testimonials { padding: 56px 0 !important; }
+      #testimonials-inner { gap: 36px !important; }
+      #testimonials-title { font-size: 40px !important; padding: 0 40px !important; }
+      .testimonials-track { padding: 0 40px !important; gap: 16px !important; }
+      .t-card {
+        min-width: calc(100vw - 96px) !important;
+        width: calc(100vw - 96px) !important;
+        padding: 28px !important;
+      }
+      .t-card h4 { font-size: 24px !important; }
+      .t-card p { font-size: 15px !important; }
+
+      /* ── FAQ ── */
+      #faq { height: auto !important; overflow: visible !important; }
+      #faq-inner {
+        flex-direction: column !important;
+        padding: 56px 40px 60px !important;
+        gap: 32px !important;
+        align-items: flex-start !important;
+      }
+      #faq-inner > div:first-child { width: 100% !important; }
+      #faq-inner h2 { font-size: 40px !important; }
+      #faq-inner > div:first-child > p { font-size: 15px !important; }
+      #faq-inner > div:last-child { width: 100% !important; }
+      .faq-item { width: 100% !important; box-sizing: border-box !important; }
+      .faq-item .faq-question p:first-child { font-size: 16px !important; }
+      .faq-item .faq-body p { font-size: 14px !important; }
+      #faq-photo { display: none !important; }
+
+      /* ── FORM ── */
+      #contact { background-position: center !important; }
+      #form-inner {
+        flex-direction: column !important;
+        gap: 32px !important;
+        padding: 56px 40px 100px !important;
+        min-height: auto !important;
+      }
+      #form-left { width: 100% !important; gap: 20px !important; padding-top: 0 !important; }
+      #form-left h2 { font-size: 40px !important; line-height: 1.05 !important; }
+      #form-left p { font-size: 16px !important; }
+      #form-right { width: 100% !important; gap: 0 !important; }
+      .form-field { padding: 16px 24px !important; }
+      .form-field input, .form-field textarea { font-size: 15px !important; }
+      #form-right button { font-size: 16px !important; padding: 20px !important; }
+
+      /* ── FOOTER ── */
+      #site-footer { height: auto !important; overflow: visible !important; margin-top: -40px !important; }
+      #footer-inner { padding: 80px 40px 44px !important; }
+      #footer-name { font-size: 36px !important; letter-spacing: -0.72px !important; line-height: 1.1 !important; }
+      #footer-nav { font-size: 15px !important; gap: 12px !important; }
+      #footer-legal p { font-size: 14px !important; }
+
+      /* ── COOKIE BANNER ── */
+      #cookie-banner { padding: 16px 40px !important; }
+    }
+
+    /* ══════════════════════
        MOBILE (≤ 768px)
     ══════════════════════ */
     @media (max-width: 768px) {
@@ -548,9 +751,131 @@
       #footer-legal p { text-align: left !important; font-size: 11px !important; }
       #footer-credit { justify-content: flex-start !important; font-size: 13px !important; }
     }
+
+    /* ══════════════════════
+       COOKIE BANNER
+    ══════════════════════ */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: #161513;
+      border-top: 1px solid rgba(198,172,137,0.16);
+      padding: 18px 130px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      transform: translateY(100%);
+      transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 0 -20px 60px rgba(0,0,0,0.35);
+    }
+    #cookie-banner.visible { transform: translateY(0); }
+    #cookie-banner.hiding  { transform: translateY(110%); }
+    @media (max-width: 768px) {
+      #cookie-banner { padding: 20px !important; flex-direction: column !important; gap: 14px !important; align-items: flex-start !important; }
+    }
+
+    /* ══════════════════════
+       FORM VALIDATION
+    ══════════════════════ */
+    .form-field {
+      transition: border-color 0.25s ease;
+    }
+    .form-field.error {
+      border-bottom-color: #b85542 !important;
+    }
+    .field-error {
+      font-family: 'SF Pro Display', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: #b85542;
+      letter-spacing: 0.01em;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 24px;
+      transition: opacity 0.28s ease, max-height 0.28s ease, margin-top 0.28s ease;
+    }
+    .form-field.error .field-error {
+      opacity: 1;
+      max-height: 30px;
+      margin-top: 6px;
+    }
+    @keyframes consentShake {
+      0%,100% { transform: translateX(0); }
+      18%     { transform: translateX(-6px); }
+      36%     { transform: translateX(5px); }
+      54%     { transform: translateX(-4px); }
+      72%     { transform: translateX(3px); }
+    }
+    .consent-shake { animation: consentShake 0.4s ease both; }
+
+    /* ══════════════════════
+       SUCCESS POPUP
+    ══════════════════════ */
+    #success-overlay {
+      position: fixed; inset: 0;
+      z-index: 400;
+      background: rgba(22,20,18,0.78);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+    #success-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    #success-card {
+      background: #e7e3dd;
+      border-radius: 20px;
+      padding: 64px 72px 56px;
+      max-width: 520px;
+      width: 90vw;
+      position: relative;
+      display: flex; flex-direction: column; align-items: center; gap: 18px;
+      text-align: center;
+      transform: scale(0.9) translateY(24px);
+      transition: transform 0.5s cubic-bezier(0.34,1.4,0.64,1);
+    }
+    #success-overlay.open #success-card {
+      transform: scale(1) translateY(0);
+    }
+    @media (max-width: 768px) {
+      #success-card { padding: 48px 28px 40px !important; }
+    }
   </style>
 </head>
 <body>
+
+<!-- ════════════════════════════════
+     COOKIE BANNER
+════════════════════════════════ -->
+<div id="cookie-banner" role="region" aria-label="Уведомление о cookie">
+  <div style="flex:1; display:flex; align-items:center; gap:16px;">
+    <svg width="5" height="5" viewBox="0 0 5 5" fill="none" aria-hidden="true" style="flex-shrink:0;">
+      <circle cx="2.5" cy="2.5" r="2.5" fill="#c6ac89"/>
+    </svg>
+    <p style="font-family:'SF Pro Display',sans-serif; font-size:15px; font-weight:300; color:rgba(229,224,204,0.7); line-height:1.5; margin:0;">
+      Сайт использует файлы cookie для улучшения работы.
+      Продолжая использование сайта, вы соглашаетесь с&nbsp;<span style="color:#c6ac89; cursor:pointer; text-decoration:underline; text-underline-offset:3px;">политикой обработки данных</span>.
+    </p>
+  </div>
+  <div style="display:flex; gap:12px; align-items:center; flex-shrink:0;">
+    <button onclick="rejectCookies()"
+      style="font-family:'SF Pro Display',sans-serif; font-size:15px; font-weight:300; color:rgba(229,224,204,0.45); background:none; border:none; cursor:pointer; padding:8px 6px; transition:color 0.2s; white-space:nowrap;"
+      onmouseover="this.style.color='rgba(229,224,204,0.85)'"
+      onmouseout="this.style.color='rgba(229,224,204,0.45)'">
+      Отклонить
+    </button>
+    <button onclick="acceptCookies()" class="btn-gold" style="padding:11px 28px; font-size:15px; border:none; white-space:nowrap;">
+      Принять
+    </button>
+  </div>
+</div>
+
 
 <!-- ════════════════════════════════
      MOBILE OVERLAY MENU
@@ -568,7 +893,7 @@
 <!-- ════════════════════════════════
      NAV
 ════════════════════════════════ -->
-<header id="site-header" style="position:fixed; top:0; left:0; width:100%; z-index:50; padding:0 130px; background:#201f1d; transform:translateY(0); transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);">
+<header id="site-header" style="position:fixed; top:0; left:0; width:100%; z-index:50; padding:0 130px; background:transparent; transform:translateY(0); transition:transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s ease;">
   <div style="position:relative; display:flex; align-items:center; height:50px;">
 
     <!-- Logo (left) -->
@@ -601,7 +926,7 @@
     </div>
   </div>
   <!-- Divider line -->
-  <div style="height:1px; background:#e5e0cc; opacity:.2; margin-top:0;"></div>
+  <div id="nav-divider" style="height:1px; background:#e5e0cc; opacity:.2; margin-top:0; transition:opacity 0.35s ease;"></div>
 </header>
 
 
@@ -1149,13 +1474,16 @@
     <div id="form-right" style="flex:1; display:flex; flex-direction:column; gap:24px;" class="reveal reveal-d2">
 
       <div class="form-field">
-        <input type="text" placeholder="Ваше имя" name="name">
+        <input type="text" placeholder="Ваше имя" name="name" autocomplete="given-name">
+        <span class="field-error"></span>
       </div>
       <div class="form-field">
-        <input type="text" placeholder="Контактный телефон или email" name="contact">
+        <input type="text" placeholder="Контактный телефон или email" name="contact" autocomplete="email">
+        <span class="field-error"></span>
       </div>
       <div class="form-field" style="padding-bottom:36px;">
         <textarea placeholder="Краткое описание ситуации" name="description" rows="2"></textarea>
+        <span class="field-error"></span>
       </div>
 
       <!-- Consent -->
@@ -1189,9 +1517,11 @@
     <!-- Top: Name + nav left, socials right -->
     <div style="width:100%; display:flex; flex-direction:column; gap:16px; position:relative;">
 
-      <h3 id="footer-name" style="font-family:'New Standard', serif; font-size:48px; color:#201f1d; letter-spacing:-0.96px; line-height:50px;">
-        Анастасия Прокопенко
-      </h3>
+      <a href="#" onclick="event.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});" style="text-decoration:none; display:inline-block; transition:opacity .2s;" onmouseover="this.style.opacity='.65'" onmouseout="this.style.opacity='1'">
+        <h3 id="footer-name" style="font-family:'New Standard', serif; font-size:48px; color:#201f1d; letter-spacing:-0.96px; line-height:50px;">
+          Анастасия Прокопенко
+        </h3>
+      </a>
 
       <!-- Nav left + Socials right -->
       <div id="footer-nav-row" style="display:flex; align-items:center; justify-content:space-between;">
@@ -1244,6 +1574,43 @@
 
 
 <!-- ════════════════════════════════
+     SUCCESS POPUP
+════════════════════════════════ -->
+<div id="success-overlay" role="dialog" aria-modal="true" aria-label="Сообщение отправлено" onclick="successOverlayClick(event)">
+  <div id="success-card">
+
+    <!-- Close -->
+    <button onclick="closeSuccess()"
+      aria-label="Закрыть"
+      style="position:absolute; top:20px; right:22px; background:none; border:none; cursor:pointer; width:32px; height:32px; display:flex; align-items:center; justify-content:center; opacity:0.35; transition:opacity 0.2s;"
+      onmouseover="this.style.opacity='0.7'"
+      onmouseout="this.style.opacity='0.35'">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M1 1l12 12M13 1L1 13" stroke="#201f1d" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Gold checkmark ring -->
+    <svg width="68" height="68" viewBox="0 0 68 68" fill="none" aria-hidden="true" style="margin-bottom:6px; flex-shrink:0;">
+      <circle cx="34" cy="34" r="32" stroke="#c6ac89" stroke-width="1.2"/>
+      <path d="M22 34l8.5 8.5L46 25" stroke="#c6ac89" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <h3 style="font-family:'New Standard', serif; font-size:46px; font-weight:400; color:#201f1d; letter-spacing:-0.03em; line-height:1.0; margin:0;">
+      Спасибо
+    </h3>
+    <p style="font-family:'SF Pro Display', sans-serif; font-size:17px; font-weight:300; color:rgba(32,31,29,0.6); line-height:1.65; max-width:340px; margin:0;">
+      Анастасия свяжется с вами в ближайшее время для первичного анализа ситуации.
+    </p>
+
+    <button onclick="closeSuccess()" class="btn-gold" style="margin-top:10px; padding:16px 52px; font-size:16px; border:none;">
+      Закрыть
+    </button>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
      SCRIPTS
 ════════════════════════════════ -->
 <script>
@@ -1275,10 +1642,101 @@
     box.setAttribute('aria-checked', active);
   }
 
+  /* ── FORM VALIDATION HELPERS ── */
+  function showFieldError(field, msg) {
+    field.classList.add('error');
+    var errEl = field.querySelector('.field-error');
+    if (errEl) errEl.textContent = msg;
+  }
+  function clearFieldError(field) {
+    field.classList.remove('error');
+  }
+
   /* ── FORM SUBMIT ── */
   function handleSubmit(e) {
     e.preventDefault();
-    alert('Спасибо! Анастасия свяжется с вами в ближайшее время.');
+    var nameInput    = document.querySelector('input[name="name"]');
+    var contactInput = document.querySelector('input[name="contact"]');
+    var consentBox   = document.getElementById('consentBox');
+    var valid        = true;
+
+    clearFieldError(nameInput.closest('.form-field'));
+    clearFieldError(contactInput.closest('.form-field'));
+
+    if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+      showFieldError(nameInput.closest('.form-field'), 'Пожалуйста, введите ваше имя');
+      valid = false;
+    }
+
+    var contactVal = contactInput.value.trim();
+    var emailRe    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var phoneRe    = /^[\+]?[0-9\s\-\(\)]{7,20}$/;
+    if (!contactVal) {
+      showFieldError(contactInput.closest('.form-field'), 'Укажите телефон или email');
+      valid = false;
+    } else if (!emailRe.test(contactVal) && !phoneRe.test(contactVal)) {
+      showFieldError(contactInput.closest('.form-field'), 'Введите корректный телефон или email');
+      valid = false;
+    }
+
+    if (consentBox.getAttribute('aria-checked') !== 'true') {
+      var consentWrap = consentBox.closest('div[style]');
+      consentWrap.classList.remove('consent-shake');
+      void consentWrap.offsetWidth;
+      consentWrap.classList.add('consent-shake');
+      consentBox.style.borderColor = '#b85542';
+      setTimeout(function(){ consentBox.style.borderColor = ''; }, 1800);
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    document.getElementById('success-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    nameInput.value = '';
+    contactInput.value = '';
+    var desc = document.querySelector('textarea[name="description"]');
+    if (desc) desc.value = '';
+    consentBox.classList.remove('checked');
+    consentBox.setAttribute('aria-checked', 'false');
+    document.getElementById('consentCheck').style.display = 'none';
+  }
+
+  /* ── CLEAR ERRORS ON FOCUS ── */
+  document.querySelectorAll('.form-field input, .form-field textarea').forEach(function(el) {
+    el.addEventListener('focus', function() {
+      clearFieldError(this.closest('.form-field'));
+    });
+  });
+
+  /* ── SUCCESS POPUP ── */
+  function successOverlayClick(e) {
+    if (e.target === document.getElementById('success-overlay')) closeSuccess();
+  }
+  function closeSuccess() {
+    document.getElementById('success-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ── COOKIE BANNER ── */
+  (function(){
+    if (localStorage.getItem('cookieConsent')) return;
+    var banner = document.getElementById('cookie-banner');
+    setTimeout(function(){ banner.classList.add('visible'); }, 1800);
+  })();
+  function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    hideCookieBanner();
+  }
+  function rejectCookies() {
+    localStorage.setItem('cookieConsent', 'rejected');
+    hideCookieBanner();
+  }
+  function hideCookieBanner() {
+    var banner = document.getElementById('cookie-banner');
+    banner.classList.remove('visible');
+    banner.classList.add('hiding');
   }
 
   /* ── TESTIMONIALS CAROUSEL ── */
@@ -1382,19 +1840,33 @@
 
   /* ── SMART SCROLL NAVBAR ── */
   (function(){
-    var hdr = document.getElementById('site-header');
-    var prevY = 0;
+    var hdr     = document.getElementById('site-header');
+    var divider = document.getElementById('nav-divider');
+    var hero    = document.getElementById('hero');
+    var prevY   = 0;
 
     function updateNav() {
-      var y = window.scrollY;
+      var y     = window.scrollY;
+      var heroH = hero ? hero.offsetHeight : 0;
+
       if (y > prevY && y > 80) {
         hdr.style.transform = 'translateY(-100%)';
       } else {
         hdr.style.transform = 'translateY(0)';
       }
+
+      if (y < heroH - 50) {
+        hdr.style.background = 'transparent';
+        if (divider) divider.style.opacity = '0';
+      } else {
+        hdr.style.background = '#201f1d';
+        if (divider) divider.style.opacity = '.2';
+      }
+
       prevY = y;
     }
 
+    updateNav();
     window.addEventListener('scroll', updateNav, {passive: true});
   })();
 </script>
